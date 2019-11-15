@@ -1,5 +1,6 @@
-from math import ceil
-from random import randrange
+from math import ceil #add ceil for win with same color
+from random import randrange  #add randrange for random number
+import sys #for quit program with sys.exit()
 
-argent = 50
-while int(argent) > 0 :
+money = 50 #player wallet
+while int(money) > 0 : # firt loop when money as > at 0
