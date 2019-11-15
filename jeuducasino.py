@@ -18,6 +18,20 @@ while int(money) > 0 : # firt loop when money as > at 0
                 choice=int(input("Attention, il faut choisir un numero entre 1 et 50 : "))
         
 
-            ordi = randrange(1,50) # Add random range for choise a number between 1 and 50
-            print ("Rien ne va plus!!")
-            print ("Et la roue s'arrete sur sur sur .... le numéro", ordi) #display random number
+            computer = randrange(1,50) # Add random range for choise a number between 1 and 50
+            print ("Faite vos jeu! rien ne va plus!!")
+            print ("Et la roue s'arrete sur sur sur .... le numéro", computer) #display random number
+
+            if computer == choice : # if same number between computer and choise winner!
+                print("Bravo vous avez gagné !!",bet * 3, "$") #display how he win
+                gamer += bet * 3  #calculation of gain
+
+            elif computer%2 == choice%2 : #if number are even and odd 
+                bet = ceil(bet * 0.5) 
+                print ("Vous avez joué la bonne couleur!!")
+                print ("Vous avez donc gagné la moitié de votre mise soit",bet,"$") #display how he win
+                money += bet
+
+            else : #if player loose 
+                print("Perdue...")
+                money -= bet
