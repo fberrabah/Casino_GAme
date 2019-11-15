@@ -15,8 +15,7 @@ while int(money) > 0 : # firt loop when money as > at 0
         if bet <= money :
             choice=int(input("choisisser votre numero entre 1 et 50 : ")) #add input with choice for number
             if choice < 1 or choice > 50 : #if choise is not in range 1 at 50
-                choice=int(input("Attention, il faut choisir un numero entre 1 et 50 : "))
-        
+                choice=int(input("Attention, il faut choisir un numero entre 1 et 50 : ")) 
 
             computer = randrange(1,50) # Add random range for choise a number between 1 and 50
             print ("Faite vos jeu! rien ne va plus!!")
@@ -35,3 +34,19 @@ while int(money) > 0 : # firt loop when money as > at 0
             else : #if player loose 
                 print("Perdue...")
                 money -= bet
+            if money <= 0: # if player dont have money the games if finish
+                print("Désolé mais la maison ne fait pas credit! je vous accompagne à la sortie.")
+            
+            else: 
+                print("Vous avez désormais",money,"$") #when the game is finish i display money
+                while True : # condition for player if want replay
+                    replay=input("Voulez-vous rejouer? oui/non ").lower() #.lower for translate upper in lower
+                    if replay == "oui": #if say yes 
+                        print("Voici votre pot",money,"$") #display money 
+                        break #break the while for restart the game at first while 
+                    elif replay == "non":
+                        print("Vous repartez avec",money,"$") #display money again
+                        print("A bientôt.")
+                        sys.exit() #for exit program 
+                    else:
+                        print("C'est oui ou non!!") #if answer are not oui ou non 
