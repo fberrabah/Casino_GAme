@@ -17,3 +17,7 @@ while int(money) > 0 : # firt loop when money as > at 0
             if choice < 1 or choice > 50 : #if choise is not in range 1 at 50
                 choice=int(input("Attention, il faut choisir un numero entre 1 et 50 : "))
         
+
+            ordi = randrange(1,50) # Add random range for choise a number between 1 and 50
+            print ("Rien ne va plus!!")
+            print ("Et la roue s'arrete sur sur sur .... le numéro", ordi) #display random number
