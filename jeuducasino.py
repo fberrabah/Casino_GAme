@@ -18,9 +18,16 @@ while int(money) > 0 : # firt loop when money as > at 0
         if money > 0 : 
             
             if bet < 1 or bet > money :         
-                bet=int(input("Veuillez entrer une mise possible : ")) #if answer not possible 
+                bet=input("Veuillez entrer une mise possible : ") #if answer not possible 
         if bet <= money :
-            choice=int(input("choisisser votre numero entre 1 et 50 : ")) #add input with choice for number
+            choice=input("choisisser votre numero entre 1 et 50 : ") #add input with choice for number
+            try :
+                choice = int(choice)
+            except ValueError:
+                print("vous n'avez pas saisi de nombre")
+                choice = -1
+                continue
+
             if choice < 1 or choice > 50 : #if choise is not in range 1 at 50
                 choice=int(input("Attention, il faut choisir un numero entre 1 et 50 : ")) 
 
