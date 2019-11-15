@@ -8,8 +8,15 @@ print("---------------------------------")
 
 money = 50 #player wallet
 while int(money) > 0 : # firt loop when money as > at 0
+        bet=input("Veuillez entrer votre mise : ")
+        try:
+            bet=int(bet)     
+        except ValueError:
+            print("vous n'avez pas saisi de nombre")
+            bet = -1
+            continue
         if money > 0 : 
-            bet=int(input("Veuillez entrer votre mise : "))     
+            
             if bet < 1 or bet > money :         
                 bet=int(input("Veuillez entrer une mise possible : ")) #if answer not possible 
         if bet <= money :
