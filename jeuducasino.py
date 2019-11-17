@@ -6,6 +6,8 @@ print("---------------------------------")
 print("Bienvenue au jeu de la roulette.") #visual information game 
 print("---------------------------------")
 
+choice = 0
+bet = 0
 money = 50 #player wallet
 while int(money) > 0 : # firt loop when money as > at 0
         bet=input("Veuillez entrer votre mise : ")
@@ -24,7 +26,7 @@ while int(money) > 0 : # firt loop when money as > at 0
             try :
                 choice = int(choice)
             except ValueError:
-                print("vous n'avez pas saisi de nombre entre 1 et 50")
+                print("vous n'avez pas saisi de nombre entre 1 et 50 :")
                 choice = -1
                 continue
 
@@ -37,7 +39,7 @@ while int(money) > 0 : # firt loop when money as > at 0
 
             if computer == choice : # if same number between computer and choise winner!
                 print("Bravo vous avez gagné !!",bet * 3, "$") #display how he win
-                gamer += bet * 3  #calculation of gain
+                money += bet * 3  #calculation of gain
 
             elif computer%2 == choice%2 : #if number are even and odd 
                 bet = ceil(bet * 0.5) 
